@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroSim - Agro Forte & Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+    
+    <!-- Biblioteca Chart.js para o gráfico dinâmico -->
+    <script src="https://jsdelivr.net"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>🌱 Agro<span>Sim</span></h1>
+            <p>Equilíbrio entre produção e meio ambiente</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Formulário de Entrada de Dados -->
+        <section class="card form-section">
+            <h2>Dados da Propriedade</h2>
+            <form id="agroForm">
+                <div class="input-group">
+                    <label for="area">Área Cultivada (Hectares):</label>
+                    <input type="number" id="area" value="100" min="1" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="manejo">Técnica de Manejo:</label>
+                    <select id="manejo">
+                        <option value="convencional">Convencional (Alto uso de grade/químicos)</option>
+                        <option value="direto">Plantio Direto (Proteção de solo)</option>
+                        <option value="sustentavel">Sustentável Integrado (ILPF / Orgânico)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="energia">Fonte de Energia Principal:</label>
+                    <select id="energia">
+                        <option value="rede">Rede Elétrica Comum / Diesel</option>
+                        <option value="solar">Energia Solar / Renovável</option>
+                    </select>
+                </div>
+
+                <button type="button" id="btnCalcular">Simular Impacto</button>
+            </form>
+        </section>
+
+        <!-- Painel de Resultados -->
+        <section class="results-section">
+            <div class="metrics-grid">
+                <div class="card metric-card" id="cardCarbono">
+                    <h3>Balanço de Carbono</h3>
+                    <p class="value" id="valCarbono">0 tCO₂eq</p>
+                    <p class="subtext">por ano</p>
+                </div>
+                <div class="card metric-card" id="cardCredito">
+                    <h3>Retorno Estimado (Crédito)</h3>
+                    <p class="value" id="valCredito">R$ 0,00</p>
+                    <p class="subtext">Potencial de receita</p>
+                </div>
+            </div>
+
+            <!-- Gráfico de Impacto -->
+            <div class="card chart-card">
+                <h3>Sua Pegada Ecológica vs. Meta Sustentável</h3>
+                <div class="chart-container">
+                    <canvas id="impactChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Dicas Personalizadas -->
+            <div class="card insights-card">
+                <h3>📋 Recomendações AgroSim</h3>
+                <ul id="insightsList">
+                    <li>Preencha a simulação para receber o diagnóstico da sua fazenda.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AgroSim - Tecnologia para o Futuro do Campo</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
